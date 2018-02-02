@@ -36,33 +36,35 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void textColorForTeamA(){
-        Button twoPointAButton = findViewById(R.id.twoPointButtonA);
-        Button patButtonA = findViewById(R.id.patButtonA);
+        Button twoPointButtonA = findViewById(R.id.twoPointButtonA);
+        Button onePointButtonA = findViewById(R.id.onePointButtonA);
         if (mCountA == 1){
-            twoPointAButton.setTextColor(Color.parseColor("#000000"));
-            patButtonA.setTextColor(Color.parseColor("#000000"));
+            twoPointButtonA.setTextColor(Color.parseColor("#000000"));
+            onePointButtonA.setTextColor(Color.parseColor("#000000"));
         } else {
-            twoPointAButton.setTextColor(Color.parseColor("#9E9E9E"));
-            patButtonA.setTextColor(Color.parseColor("#9E9E9E"));
+            twoPointButtonA.setTextColor(Color.parseColor("#9E9E9E"));
+            onePointButtonA.setTextColor(Color.parseColor("#9E9E9E"));
         }
     }
 
     private void textColorForTeamB(){
-        Button twoPointBButton = findViewById(R.id.twoPointButtonB);
-        Button patButtonB = findViewById(R.id.patButtonB);
-        if (mCountA == 1){
-            twoPointBButton.setTextColor(Color.parseColor("#000000"));
-            patButtonB.setTextColor(Color.parseColor("#000000"));
+        Button twoPointButtonB = findViewById(R.id.twoPointButtonB);
+        Button onePointButtonB = findViewById(R.id.onePointButtonB);
+        if (mCountB == 1){
+            twoPointButtonB.setTextColor(Color.parseColor("#000000"));
+            onePointButtonB.setTextColor(Color.parseColor("#000000"));
         } else {
-            twoPointBButton.setTextColor(Color.parseColor("#9E9E9E"));
-            patButtonB.setTextColor(Color.parseColor("#9E9E9E"));
+            twoPointButtonB.setTextColor(Color.parseColor("#9E9E9E"));
+            onePointButtonB.setTextColor(Color.parseColor("#9E9E9E"));
         }
     }
 
     public void addTouchDownForTeamA(View view) {
         score_a_team = score_a_team + 6;
         mCountA = 1;
+        mCountB = 0;
         textColorForTeamA();
+        textColorForTeamB();
         displayForTeam(score_a_team, R.id.team_a_score);
     }
 
@@ -71,16 +73,20 @@ public class MainActivity extends AppCompatActivity {
             score_a_team = score_a_team + 2;
             displayForTeam(score_a_team, R.id.team_a_score);
             mCountA = 0;
+            mCountB = 0;
             textColorForTeamA();
+            textColorForTeamB();
         }
     }
 
-    public void addPatForTeamA(View view) {
+    public void addOnePointForTeamA(View view) {
         if (mCountA == 1) {
             score_a_team = score_a_team + 1;
             displayForTeam(score_a_team, R.id.team_a_score);
             mCountA = 0;
+            mCountB = 0;
             textColorForTeamA();
+            textColorForTeamB();
         }
     }
 
@@ -88,14 +94,18 @@ public class MainActivity extends AppCompatActivity {
         score_a_team = score_a_team + 3;
         displayForTeam(score_a_team, R.id.team_a_score);
         mCountA = 0;
+        mCountB = 0;
         textColorForTeamA();
+        textColorForTeamB();
     }
 
     public void addSafetyForTeamA(View view) {
         score_a_team = score_a_team + 2;
         displayForTeam(score_a_team, R.id.team_a_score);
         mCountA = 0;
+        mCountB = 0;
         textColorForTeamA();
+        textColorForTeamB();
     }
 
     public void resetScore(View view) {
@@ -112,6 +122,8 @@ public class MainActivity extends AppCompatActivity {
     public void addTouchDownForTeamB(View view) {
         score_b_team = score_b_team + 6;
         mCountB = 1;
+        mCountA = 0;
+        textColorForTeamA();
         textColorForTeamB();
         displayForTeam(score_b_team, R.id.team_b_score);
     }
@@ -120,16 +132,20 @@ public class MainActivity extends AppCompatActivity {
         if (mCountB == 1) {
             score_b_team = score_b_team + 2;
             displayForTeam(score_b_team, R.id.team_b_score);
+            mCountA = 0;
             mCountB = 0;
+            textColorForTeamA();
             textColorForTeamB();
         }
     }
 
-    public void addPatForTeamB(View view) {
+    public void addOnePointForTeamB(View view) {
         if (mCountB == 1) {
             score_b_team = score_b_team + 1;
             displayForTeam(score_b_team, R.id.team_b_score);
+            mCountA = 0;
             mCountB = 0;
+            textColorForTeamA();
             textColorForTeamB();
         }
     }
@@ -137,14 +153,18 @@ public class MainActivity extends AppCompatActivity {
     public void addFieldGoalForTeamB(View view) {
         score_b_team = score_b_team + 3;
         displayForTeam(score_b_team, R.id.team_b_score);
+        mCountA = 0;
         mCountB = 0;
+        textColorForTeamA();
         textColorForTeamB();
     }
 
     public void addSafetyForTeamB(View view) {
         score_b_team = score_b_team + 2;
         displayForTeam(score_b_team, R.id.team_b_score);
+        mCountA = 0;
         mCountB = 0;
+        textColorForTeamA();
         textColorForTeamB();
     }
 }

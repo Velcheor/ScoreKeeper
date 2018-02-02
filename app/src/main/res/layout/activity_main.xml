@@ -66,13 +66,13 @@
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/patButtonA"
+                    android:id="@+id/onePointButtonA"
                     android:textColor="#9E9E9E"
                     android:layout_marginBottom="8dp"
                     android:layout_marginLeft="24dp"
                     android:layout_marginRight="24dp"
-                    android:onClick="addPatForTeamA"
-                    android:text="pat" />
+                    android:onClick="addOnePointForTeamA"
+                    android:text="one-point" />
 
                 <Button
                     android:layout_width="match_parent"
@@ -97,7 +97,7 @@
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
                 android:layout_marginTop="16dp"
-                android:background="@android:color/darker_gray" />
+                android:background="#4CAF50" />
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -149,13 +149,13 @@
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/patButtonB"
+                    android:id="@+id/onePointButtonB"
                     android:layout_marginBottom="8dp"
                     android:layout_marginLeft="24dp"
                     android:layout_marginRight="24dp"
-                    android:onClick="addPatForTeamB"
+                    android:onClick="addOnePointForTeamB"
                     android:textColor="#9E9E9E"
-                    android:text="pat" />
+                    android:text="one-point" />
 
                 <Button
                     android:layout_width="match_parent"
