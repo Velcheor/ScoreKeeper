@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".MainActivity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/americanfootball">
+    android:background="@drawable/americanfootball"
+    tools:context=".MainActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:id="@+id/linearLayout">
+            android:orientation="horizontal">
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -53,26 +53,26 @@
                     android:text="touchdown" />
 
                 <Button
+                    android:id="@+id/twoPointButtonA"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/twoPointButtonA"
-                    android:textColor="#9E9E9E"
                     android:layout_marginBottom="8dp"
                     android:layout_marginLeft="24dp"
                     android:layout_marginRight="24dp"
                     android:onClick="addTwoForTeamA"
-                    android:text="two-point" />
+                    android:text="two-point"
+                    android:textColor="#9E9E9E" />
 
                 <Button
+                    android:id="@+id/onePointButtonA"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/onePointButtonA"
-                    android:textColor="#9E9E9E"
                     android:layout_marginBottom="8dp"
                     android:layout_marginLeft="24dp"
                     android:layout_marginRight="24dp"
                     android:onClick="addOnePointForTeamA"
-                    android:text="one-point" />
+                    android:text="one-point"
+                    android:textColor="#9E9E9E" />
 
                 <Button
                     android:layout_width="match_parent"
@@ -136,26 +136,26 @@
                     android:text="touchdown" />
 
                 <Button
+                    android:id="@+id/twoPointButtonB"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/twoPointButtonB"
-                    android:textColor="#9E9E9E"
                     android:layout_marginBottom="8dp"
                     android:layout_marginLeft="24dp"
                     android:layout_marginRight="24dp"
                     android:onClick="addTwoForTeamB"
-                    android:text="two-point" />
+                    android:text="two-point"
+                    android:textColor="#9E9E9E" />
 
                 <Button
+                    android:id="@+id/onePointButtonB"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/onePointButtonB"
                     android:layout_marginBottom="8dp"
                     android:layout_marginLeft="24dp"
                     android:layout_marginRight="24dp"
                     android:onClick="addOnePointForTeamB"
-                    android:textColor="#9E9E9E"
-                    android:text="one-point" />
+                    android:text="one-point"
+                    android:textColor="#9E9E9E" />
 
                 <Button
                     android:layout_width="match_parent"

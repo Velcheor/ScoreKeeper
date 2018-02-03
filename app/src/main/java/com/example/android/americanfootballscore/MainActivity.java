@@ -3,6 +3,9 @@ package com.example.android.americanfootballscore;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.ForegroundColorSpan;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -15,6 +18,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        SpannableString s = new SpannableString(getTitle());
+        s.setSpan(new ForegroundColorSpan(Color.BLACK), 0, getTitle().length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        getSupportActionBar().setTitle(s);
         if (savedInstanceState != null) {
             score_a_team = savedInstanceState.getInt("score_a");
             score_b_team = savedInstanceState.getInt("score_b");
@@ -30,15 +36,15 @@ public class MainActivity extends AppCompatActivity {
         outState.putInt("score_b", score_b_team);
     }
 
-    private void displayForTeam(int score, int id){
+    private void displayForTeam(int score, int id) {
         TextView scoreText = findViewById(id);
         scoreText.setText(String.valueOf(score));
     }
 
-    private void textColorForTeamA(){
+    private void textColorForTeamA() {
         Button twoPointButtonA = findViewById(R.id.twoPointButtonA);
         Button onePointButtonA = findViewById(R.id.onePointButtonA);
-        if (mCountA == 1){
+        if (mCountA == 1) {
             twoPointButtonA.setTextColor(Color.parseColor("#000000"));
             onePointButtonA.setTextColor(Color.parseColor("#000000"));
         } else {
@@ -47,10 +53,10 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void textColorForTeamB(){
+    private void textColorForTeamB() {
         Button twoPointButtonB = findViewById(R.id.twoPointButtonB);
         Button onePointButtonB = findViewById(R.id.onePointButtonB);
-        if (mCountB == 1){
+        if (mCountB == 1) {
             twoPointButtonB.setTextColor(Color.parseColor("#000000"));
             onePointButtonB.setTextColor(Color.parseColor("#000000"));
         } else {
